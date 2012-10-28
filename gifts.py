@@ -3,10 +3,12 @@ from flask import Flask, request, session, g, redirect, url_for, abort, \
 	render_template, flash, _app_ctx_stack
 from urlparse import urlparse, urlunparse
 
-# DB config
+# Default config
 DATABASE = "gifts.db"
 DEBUG = True
 SECRET_KEY = "insert key here"
+SERVER_NAME="localhost"
+SERVER_PORT="5000"
 
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -117,4 +119,4 @@ def new_gift():
 
 if __name__ == '__main__':
 	init_db()
-	app.run()
+	app.run(app.config.get('SERVER_NAME'), app.config.get('SERVER_PORT'))
