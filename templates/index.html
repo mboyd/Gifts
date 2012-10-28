@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Gifts{% endblock %}
+
+{% block content %}
+
+	<div id="description">
+		Gifts is a christmas list app, made with love
+		for the Boyd family by Merritt.
+	</div>
+
+	<div id="recent">
+		<h3>Recent changes</h3>
+		<ul>
+			<li>Oct 28 - The site now exists.  This may or may not be a good thing.  -mboyd</li>
+		</ul>
+	</div>
+
+	{% if not session['logged_in'] %}
+		<form action="/login" method="post">
+			<label for="username">Username: </label>
+			<input name="username" type="text">
+
+			<label for="password">Password: </label>
+			<input name="password" type="password">
+
+			<button type="submit" class="btn">Log In</button>
+		</form>
+	{% else %}
+		<h3><a href='/gifts'>Let's do this!</a></h3>
+	{% endif %}
+
+{% endblock %}

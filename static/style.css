@@ -1,0 +1,10 @@
+html {
+	width: 500px;
+	margin: auto;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+#header {
+	position: relative;
+	left: -30px;
+}

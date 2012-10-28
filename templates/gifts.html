@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Gifts{% endblock %}
+
+{% block content %}
+
+	{% for user in users %}
+	<div class="user">
+		<h3>{{ user.name }}</h2>
+		<ul>
+		{% for gift in user.gifts %}
+			<li><a href="{{gift.url}}">{{ gift.title }} (${{gift.price}})</a></li>
+		{% else %}
+			<li style="font-style: italic">No gifts listed yet :(</li>
+		{% endfor %}
+		</ul>
+		{% if user.id == session['user_id'] %}
+			<a href='/gifts/new'>Add new gift</a>
+		{% endif %}
+	</div>
+	{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}New Gift{% endblock %}
+
+{% block content %}
+
+	<div id="new_gift">
+		<h2>New Gift</h2>
+
+		<form method="post">
+			<label for="title">Title:</label>
+			<input name="title" type="text">
+
+			<label for="url">URL:</label>
+			<input name="url" type="text">
+
+			<label for="price">Price:</label>
+			<input name="price" type="text">
+
+			<label for="desc">Description:</label>
+			<textarea name="desc" rows="3"></textarea>
+
+			<button class="btn" type="submit">Submit</button>
+		</form>
+
+{% endblock %}
